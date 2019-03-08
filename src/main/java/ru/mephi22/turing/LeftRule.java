@@ -1,7 +1,4 @@
-package tMachine;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+package ru.mephi22.turing;
 
 public class LeftRule implements Comparable{
     public String sym;

@@ -1,4 +1,4 @@
-package tMachine;
+package ru.mephi22.turing;
 
 import java.util.ArrayList;
 

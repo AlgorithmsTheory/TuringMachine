@@ -1,9 +1,9 @@
-package tMachine;
+package ru.mephi22.turing;
+
+import ru.mephi22.turing.interfaces.RuleStore;
 
 import java.util.Map;
 import java.util.TreeMap;
-import tMachine.interfaces.RuleStore;
-
 
 public class Rules implements RuleStore {
     protected Map<LeftRule, RightRule> rules;

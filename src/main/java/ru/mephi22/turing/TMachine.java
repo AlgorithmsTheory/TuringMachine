@@ -1,14 +1,9 @@
-package tMachine;
+package ru.mephi22.turing;
 
-import java.io.PrintWriter;
 import java.nio.charset.Charset;
-import tMachine.interfaces.*;
-import tMachine.*;
-import java.util.Base64;
-import javax.xml.crypto.dsig.spec.C14NMethodParameterSpec;
+import ru.mephi22.turing.interfaces.RuleStore;
 import org.json.JSONObject;
 import org.json.JSONArray;
-import org.json.JSONException;
 
 
 public class TMachine {

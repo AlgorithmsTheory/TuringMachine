@@ -1,6 +1,6 @@
-package tMachine;
+package ru.mephi22.turing;
 
-import tMachine.interfaces.InfiniteTape;
+import ru.mephi22.turing.interfaces.InfiniteTape;
 
 public class Tape implements InfiniteTape {
 

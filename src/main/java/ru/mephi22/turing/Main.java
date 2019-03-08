@@ -1,19 +1,12 @@
-package test;
+package ru.mephi22.turing;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Locale;
-import java.util.Scanner;
-import tMachine.*;
-import tMachine.interfaces.*;
 import org.json.*;
+import ru.mephi22.turing.interfaces.RuleStore;
 
 public class Main {
 

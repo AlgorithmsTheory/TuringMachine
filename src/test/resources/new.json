@@ -1,0 +1,22 @@
+{
+  "rules": [
+    {
+      "source": {
+        "state": "S0",
+        "symbols": [
+          "a"
+        ]
+      },
+      "destination": {
+        "symbols": [
+          "b"
+        ],
+        "moves": [
+          "R"
+        ],
+        "state": "S0"
+      }
+    }
+  ],
+  "inputs": ["abbbcc"]
+}
