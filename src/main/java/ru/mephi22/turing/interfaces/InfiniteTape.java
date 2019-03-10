@@ -1,8 +1,8 @@
 package ru.mephi22.turing.interfaces;
 
 public interface InfiniteTape {
-    char getInput();
-    void setOutput(char sym);
+    char getSymbol();
+    void setSymbol(char symbol);
     void goLeft();
     void goRight();
 }

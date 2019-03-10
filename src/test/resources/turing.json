@@ -2,15 +2,20 @@
   "rule": [
     {
       "src":"S0{∂}",
-      "dst":"{∂}{R}S0",
+      "dst":"{∂}{R}S0"
     },
     {
       "src":"S0{a}",
-      "dst":"{b}{R}S0"},
+      "dst":"{b}{R}S0"
+    },
+    {
+      "src":"S0{b}",
+      "dst":"{b}{R}S0"
+    },
     {
       "src":"S0{λ}",
-      "dst":"{λ}{H}Ω",
+      "dst":"{λ}{H}Ω"
     }
   ],
-  "str":["∂aabbbaaabb"],
+  "str":["∂aabbbaaabb"]
 }

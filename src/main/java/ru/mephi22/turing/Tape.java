@@ -4,42 +4,42 @@ import ru.mephi22.turing.interfaces.InfiniteTape;
 
 public class Tape implements InfiniteTape {
 
-    public static char lambda = 955;
-    String tape;
-    int cpos;
+    private static final char LAMBDA = 955;
+    private String tape;
+    private int position;
 
-    public Tape(String st) {
-        tape = new String(st);
-        cpos = 0;
+    Tape(String st) {
+        tape = st;
+        position = 0;
     }
 
     @Override
-    public char getInput() {
-        return tape.charAt(cpos);
+    public char getSymbol() {
+        return tape.charAt(position);
     }
 
     @Override
-    public void setOutput(char sym) {
+    public void setSymbol(char symbol) {
         char[] tmpgoof = tape.toCharArray();
-        tmpgoof[cpos] = sym;
+        tmpgoof[position] = symbol;
         tape = new String(tmpgoof);
     }
 
     @Override
     public void goLeft() {
-        cpos--;
+        position--;
     }
 
     @Override
     public void goRight() {
-        if (tape.length() - 1 == cpos) {
-            tape += lambda;
+        if (tape.length() - 1 == position) {
+            tape += LAMBDA;
         }
-        cpos++;
+        position++;
     }
 
     @Override
     public String toString() {
-        return tape.replaceAll(String.valueOf(lambda), "");
+        return tape.replaceAll(String.valueOf(LAMBDA), "");
     }
 }

@@ -1,24 +1,26 @@
 package ru.mephi22.turing;
 
-public class LeftRule implements Comparable{
-    public String sym;
-    public String state;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+
+@EqualsAndHashCode
+@AllArgsConstructor
+public class LeftRule implements Comparable {
+    private final String state;
+    private final String symbol;
     
-    public LeftRule(String s, String  c){
-        sym = c;
-        state = s;
-    }
-    
-    public LeftRule(String description){
-        state = description.split("\\{")[0];
-        sym = "";
+    LeftRule(String description) {
+        String[] splittedDescription = description.split("\\{");
+        state = splittedDescription[0];
+        StringBuilder symBuilder = new StringBuilder();
         String chars = description.split("\\{")[1];
         char[] symbol = chars.toCharArray();
         for (int i = 0; i < chars.length() - 1; i++){
             if (symbol[i] != ','){
-             sym += symbol[i];
+             symBuilder.append(symbol[i]);
             }
         }
+        this.symbol = symBuilder.toString();
     }
     
     @Override
@@ -26,7 +28,7 @@ public class LeftRule implements Comparable{
         if ( o.getClass() != this.getClass() )
             return -1;
         LeftRule extra = (LeftRule)o;
-        if ( !sym.equals(extra.sym) ) return sym.compareTo(extra.sym);
+        if ( !symbol.equals(extra.symbol) ) return symbol.compareTo(extra.symbol);
         return extra.state.compareTo(state);
     }
 }

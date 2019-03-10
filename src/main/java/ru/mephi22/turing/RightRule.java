@@ -1,48 +1,44 @@
 package ru.mephi22.turing;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 
-
+@Getter
 public class RightRule {
-    public String state;
-    public String sym;
-    public ArrayList<Motion> motion;
+    private String state;
+    private String sym;
+    private ArrayList<Motion> motion;
     
-    public RightRule(String c, Motion m, String st){
-        sym = c;
-        state = st;
-//        motion = m;
-    }
-    
-    public RightRule(String description){
-        sym = "";
+    RightRule(String description){
+        StringBuilder symBuilder = new StringBuilder();
         String str = description.split("\\{", 2)[1];
-        String[] strs = str.split("\\}", 2); 
+        String[] strs = str.split("}", 2);
         String chars = strs[0];  //getting symbols
         char[] symbol = chars.toCharArray();
         for (int i = 0; i < chars.length(); i++){
             if (symbol[i] != ','){
-             sym += symbol[i];
+             symBuilder.append(symbol[i]);
             }
         }
+        sym = symBuilder.toString();
         String str2 = strs[1];
         String str3 = str2.split("\\{", 2)[1];
         strs = str3.split("\\}", 2);
         String strMotions = strs[0];
         char[] motions = strMotions.toCharArray();
-//        motion[] symbol = chars.toCharArray();
-        motion = new ArrayList();
+        motion = new ArrayList<>();
         for (int i = 0; i < strMotions.length(); i++){
             if (motions[i] != ','){
                 switch(motions[i]){
                 case 'L':
-                    motion.add(Motion.Left);
+                    motion.add(Motion.LEFT);
                     break;
                 case 'R':
-                    motion.add(Motion.Right);
+                    motion.add(Motion.RIGHT);
                     break;
                 case 'H':
-                    motion.add(Motion.NoMotion);
+                    motion.add(Motion.HOLD);
                     break;
                 }
             }
@@ -51,9 +47,9 @@ public class RightRule {
         state = strs[1];
     }
     
-    public enum Motion{
-        Left,
-        Right,
-        NoMotion;
+    public enum Motion {
+        LEFT,
+        RIGHT,
+        HOLD
     }
 }
