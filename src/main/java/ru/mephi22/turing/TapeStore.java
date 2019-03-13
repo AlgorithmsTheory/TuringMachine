@@ -8,7 +8,7 @@ import static ru.mephi22.turing.RightRule.Motion;
 public class TapeStore {
     private ArrayList<Tape> tapes;
     
-    TapeStore(ArrayList<String> data){
+    TapeStore(ArrayList<String> data) {
         tapes = new ArrayList<>();
         for (String aData : data) {
             tapes.add(new Tape(aData));
@@ -50,7 +50,9 @@ public class TapeStore {
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
-        for (Tape tape : tapes) result.append(tape.toString()).append(" ");
+        for (Tape tape : tapes) {
+            result.append(tape.toString()).append(" ");
+        }
         return result.toString();
     }
 }

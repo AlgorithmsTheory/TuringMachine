@@ -8,7 +8,7 @@ import java.util.TreeMap;
 public class Rules implements RuleStore {
     private Map<LeftRule, RightRule> rules;
     
-    Rules(){
+    Rules() {
         rules = new TreeMap<>();
     }
     

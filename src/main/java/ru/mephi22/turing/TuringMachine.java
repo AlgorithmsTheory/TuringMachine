@@ -41,7 +41,7 @@ final class TuringMachine {
             
             System.out.write(res, 0, res.length);
             
-        } catch (Exception ex) {
+        } catch (RuntimeException ex) {
             System.out.println("fatal error " + ex.getMessage());
         }
     }
