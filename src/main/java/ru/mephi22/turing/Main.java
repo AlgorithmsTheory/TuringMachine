@@ -1,19 +1,12 @@
-package test;
+package ru.mephi22.turing;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Locale;
-import java.util.Scanner;
-import tMachine.*;
-import tMachine.interfaces.*;
 import org.json.*;
+import ru.mephi22.turing.interfaces.RuleStore;
 
 public class Main {
 
@@ -22,28 +15,33 @@ public class Main {
         String data = new String(encoded, Charset.forName("UTF-8"));
         JSONObject obj = new JSONObject(data);
         
-        // build tapes
+        TapeStore tapeStore = buildTapes(obj);
+        RuleStore ruleStore = buildRules(obj);
+
+        TuringMachine machine = new TuringMachine();
+        machine.setRules(ruleStore);
+        machine.setTapeStore(tapeStore);
+        machine.run();
+    }
+
+    private static TapeStore buildTapes(JSONObject obj) {
         ArrayList<String> tapes = new ArrayList<>();
         JSONArray input = obj.getJSONArray("str");
         for (int i = 0; i < input.length(); ++i) {
             tapes.add(input.getString(i));
         }
-        TapeStore tapeStore = new TapeStore(tapes);
-        
-        // build rules
+        return new TapeStore(tapes);
+    }
+
+    private static RuleStore buildRules(JSONObject obj) {
         JSONArray rules = obj.getJSONArray("rule");
         RuleStore ruleStore = new Rules();
         for (int i = 0; i < rules.length(); ++i) {
             JSONObject rule = rules.getJSONObject(i);
-            LeftRule l = new LeftRule(rule.getString("src"));
-            RightRule r = new RightRule(rule.getString("dst"));
-            ruleStore.addRule(l, r);
+            LeftRule leftRule = new LeftRule(rule.getString("src"));
+            RightRule rightRule = new RightRule(rule.getString("dst"));
+            ruleStore.addRule(leftRule, rightRule);
         }
-        
-        TMachine machine = new TMachine();
-
-        machine.setRules(ruleStore);
-        machine.setTape(tapeStore);
-        machine.run();
+        return ruleStore;
     }
 }
