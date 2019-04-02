@@ -2,6 +2,8 @@ package ru.mephi22.turing;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
+import org.json.JSONObject;
+import org.json.JSONArray;
 
 @EqualsAndHashCode
 @AllArgsConstructor
@@ -9,16 +11,13 @@ public class LeftRule implements Comparable {
     private final String state;
     private final String symbol;
     
-    LeftRule(String description) {
-        String[] splittedDescription = description.split("\\{");
-        state = splittedDescription[0];
+    LeftRule(JSONObject jsonInput) {
+        this.state = jsonInput.getString("state");
+
+        JSONArray symbolArray = jsonInput.getJSONArray("symbols");
         StringBuilder symBuilder = new StringBuilder();
-        String chars = description.split("\\{")[1];
-        char[] symbol = chars.toCharArray();
-        for (int i = 0; i < chars.length() - 1; i++){
-            if (symbol[i] != ','){
-             symBuilder.append(symbol[i]);
-            }
+        for (int i = 0; i < symbolArray.length(); i++) {
+            symBuilder.append(symbolArray.getString(i));
         }
         this.symbol = symBuilder.toString();
     }
