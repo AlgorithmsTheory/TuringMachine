@@ -52,7 +52,7 @@ final class TuringMachine {
         if (rightRule == null) {
             state = OMEGA;
         } else {
-            tapeStore.setOutput(rightRule.getSym());
+            tapeStore.setOutput(rightRule.getSymbol());
             state = rightRule.getState();
             tapeStore.move(rightRule.getMotion());
         }

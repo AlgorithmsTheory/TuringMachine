@@ -1,0 +1,73 @@
+{
+  "rules": [
+    {
+      "source": {
+        "state": "S0",
+        "symbols": [
+          "∂"
+        ]
+      },
+      "destination": {
+        "symbols": [
+          "∂"
+        ],
+        "moves": [
+          "R"
+        ],
+        "state": "S0"
+      }
+    },
+    {
+      "source": {
+        "state": "S0",
+        "symbols": [
+          "a"
+        ]
+      },
+      "destination": {
+        "symbols": [
+          "b"
+        ],
+        "moves": [
+          "R"
+        ],
+        "state": "S0"
+      }
+    },
+    {
+      "source": {
+        "state": "S0",
+        "symbols": [
+          "b"
+        ]
+      },
+      "destination": {
+        "symbols": [
+          "b"
+        ],
+        "moves": [
+          "R"
+        ],
+        "state": "S0"
+      }
+    },
+    {
+      "source": {
+        "state": "S0",
+        "symbols": [
+          "λ"
+        ]
+      },
+      "destination": {
+        "symbols": [
+          "λ"
+        ],
+        "moves": [
+          "H"
+        ],
+        "state": "Ω"
+      }
+    }
+  ],
+  "inputs": ["∂aabbbaaabb"]
+}

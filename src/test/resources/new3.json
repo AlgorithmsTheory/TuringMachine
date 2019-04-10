@@ -1,0 +1,176 @@
+{
+  "rules": [
+    {
+      "source": {
+        "state": "S0",
+        "symbols": [
+          "∂","∂","∂"
+        ]
+      },
+      "destination": {
+        "symbols": [
+          "∂","∂","∂"
+        ],
+        "moves": [
+          "R","R","R"
+        ],
+        "state": "S0"
+      }
+    },
+    {
+      "source": {
+        "state": "S0",
+        "symbols": [
+          "a","a","a"
+        ]
+      },
+      "destination": {
+        "symbols": [
+          "b","b","b"
+        ],
+        "moves": [
+          "R","R","R"
+        ],
+        "state": "S0"
+      }
+    },
+    {
+      "source": {
+        "state": "S0",
+        "symbols": [
+          "b","b","b"
+        ]
+      },
+      "destination": {
+        "symbols": [
+          "b","b","b"
+        ],
+        "moves": [
+          "R","R","R"
+        ],
+        "state": "S0"
+      }
+    },
+    {
+      "source": {
+        "state": "S0",
+        "symbols": [
+          "λ","λ","λ"
+        ]
+      },
+      "destination": {
+        "symbols": [
+          "λ","λ","λ"
+        ],
+        "moves": [
+          "H","H","H"
+        ],
+        "state": "Ω"
+      }
+    },
+    {
+      "source": {
+        "state": "S0",
+        "symbols": [
+          "a","a","b"
+        ]
+      },
+      "destination": {
+        "symbols": [
+          "b","b","b"
+        ],
+        "moves": [
+          "R","R","R"
+        ],
+        "state": "S0"
+      }
+    },
+    {
+      "source": {
+        "state": "S0",
+        "symbols": [
+          "a","b","a"
+        ]
+      },
+      "destination": {
+        "symbols": [
+          "b","b","b"
+        ],
+        "moves": [
+          "R","R","R"
+        ],
+        "state": "S0"
+      }
+    },
+    {
+      "source": {
+        "state": "S0",
+        "symbols": [
+          "a","b","b"
+        ]
+      },
+      "destination": {
+        "symbols": [
+          "b","b","b"
+        ],
+        "moves": [
+          "R","R","R"
+        ],
+        "state": "S0"
+      }
+    },
+    {
+      "source": {
+        "state": "S0",
+        "symbols": [
+          "b","a","a"
+        ]
+      },
+      "destination": {
+        "symbols": [
+          "b","b","b"
+        ],
+        "moves": [
+          "R","R","R"
+        ],
+        "state": "S0"
+      }
+    },
+    {
+      "source": {
+        "state": "S0",
+        "symbols": [
+          "b","a","b"
+        ]
+      },
+      "destination": {
+        "symbols": [
+          "b","b","b"
+        ],
+        "moves": [
+          "R","R","R"
+        ],
+        "state": "S0"
+      }
+    },
+    {
+      "source": {
+        "state": "S0",
+        "symbols": [
+          "b","b","a"
+        ]
+      },
+      "destination": {
+        "symbols": [
+          "b","b","b"
+        ],
+        "moves": [
+          "R","R","R"
+        ],
+        "state": "S0"
+      }
+    }
+  ],
+  "inputs": ["∂aabb","∂abab","∂bbaa"]
+
+}
