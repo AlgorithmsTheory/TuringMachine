@@ -11,10 +11,9 @@ public class LeftRule implements Comparable {
     private final String state;
     private final String symbol;
     
-    LeftRule(JSONObject jsonInput) {
-        this.state = jsonInput.getString("state");
-
-        JSONArray symbolArray = jsonInput.getJSONArray("symbols");
+    LeftRule(JSONObject source) {
+        this.state = source.getString("state");
+        JSONArray symbolArray = source.getJSONArray("symbols");
         StringBuilder symBuilder = new StringBuilder();
         for (int i = 0; i < symbolArray.length(); i++) {
             symBuilder.append(symbolArray.getString(i));

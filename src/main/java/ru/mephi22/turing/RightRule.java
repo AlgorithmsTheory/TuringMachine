@@ -12,21 +12,18 @@ public class RightRule {
     private String symbol;
     private ArrayList<Motion> motion;
 
-    RightRule(JSONObject jsonInput){
-
-        this.state = jsonInput.getString("state");
-
-        JSONArray symbolArray = jsonInput.getJSONArray("symbols");
+    RightRule(JSONObject destination) {
+        this.state = destination.getString("state");
+        JSONArray symbolArray = destination.getJSONArray("symbols");
         StringBuilder symBuilder = new StringBuilder();
         for (int i = 0; i < symbolArray.length(); i++) {
             symBuilder.append(symbolArray.getString(i));
         }
         this.symbol = symBuilder.toString();
-
-        JSONArray motionArray = jsonInput.getJSONArray("moves");
+        JSONArray motionArray = destination.getJSONArray("moves");
         motion = new ArrayList<>();
-        for (int i = 0; i < motionArray.length(); i++){
-                switch(motionArray.getString(i)){
+        for (int i = 0; i < motionArray.length(); i++) {
+                switch(motionArray.getString(i)) {
                     case "L":
                         motion.add(Motion.LEFT);
                         break;

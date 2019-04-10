@@ -31,7 +31,6 @@ public class Main {
         JSONArray input = obj.getJSONArray("inputs");
         for (int i = 0; i < input.length(); ++i) {
             tapes.add(input.getString(i));
-
         }
         return new TapeStore(tapes);
     }
